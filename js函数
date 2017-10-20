@@ -1,0 +1,33 @@
+1，函数的定义。
+（1），通过函数的声明的形式来定义。
+function max（）{}；
+（2），通过函数表达式的形式来定义。
+var  max = function（）{}；
+（3），通过构造函数。
+var max=  new Function(a,b);
+max(a,b);
+2,函数的调用。
+（1），函数直接调用（非严格模式下this为全局对象，严格模式下为undefined）。
+function max（）{}；
+max（）；
+（2），作为方法调用（this为调用此方法的对象）。
+var obj ={
+test:fucntion(){};
+}obj.test();
+（3），通过call()和apply()(this函数对象的call/apply方法的首个参数，)
+objA = {name:"AA"};
+objB = {name:"BB"};
+objA.foo = function(){
+    console.log(this.name);
+};
+objA.foo();//AA
+objA.foo.call(objB);
+（4），- 作为构造函数调用（this指向实例化出来的对象）
+function Person(name){
+    this.name = name;
+}
+Person.prototype.sayHi = function(){
+    console.log("Hi,i'm "+this.name);
+};
+var p1 = new Person("Jack");
+p1.sayHi()
