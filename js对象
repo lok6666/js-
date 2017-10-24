@@ -49,3 +49,27 @@ enumerable:false,
 configurable:true});
 8,属性特性描述符：属性特性描述符是一个对象，用来查看对象属性的特性
 object.getOwnPropertyDescriptor(obj,"x");
+        8.1给多个属性设置特性
+        Object.defineProperties(obj,{
+        y:{enumerbale:, value:,writable:,},
+        z:{enumerbale:, value:,writable:, }
+        });
+        8.2属性特性继承
+        与继承对象属性一致。
+9,对象访问器属性特性：
+（1），configurable,可配置特性。
+（2），enumerable，可枚举属性。
+（3），get可写属性，在读取时可用的函数，默认为underfined。
+（4），set可写属性，在写取时可用的函数，默认为underfined。
+var person = {_name:"Jack"};
+Object.defineProperty(person,"name",{
+    configurable:false,//若为true会如何
+    enumerable:true,
+    set:function(val){this._name = val},
+    get:function(){return this._name}
+});
+    console.log(person.name);
+    person.name = "Lucy";
+    console.log(person.name);
+    delete person.name;//delete person.name;
+    console.log(person.name);
