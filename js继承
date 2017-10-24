@@ -1,1 +1,30 @@
-1
+1，javascript采用的为原型的继承方式，每一个对象都有一个原型对象，可以通过对象的 __proto__ 属性来访问原型对象最原始原型为null。
+2，JavaScript的继承是对象-对象的原型继承，为面向对象提供了动态继承的功能。
+3，js原型链自有属性，继承属性。
+var proObj = {
+    z:3
+};
+
+var obj = Object.create(proObj);
+obj.x = 1;
+obj.y = 2;
+
+console.log(obj.x);//1
+console.log(obj.y);//2
+console.log(obj.z);//3
+
+console.log("z" in obj);//true
+console.log(obj.hasOwnProperty("z"));//false
+4，在JS中构造函数（类似于类）也是对象，有一个重要的属性（原型 prototype），该属性与继承相关。
+   构造函数有一个重要属性（原型 prototype），该属性就是实例化出来的对象的原型。
+            prototype
+   person------------->person.prototype。
+5，通过实例化对象的_proto_属性确认原型。
+   obj._proto_===person.prototype;
+6,function person(){};
+var obj = new person();
+obj._proto_==person.prototype;
+person.prototype==Object.prototype;
+Object.prototype==null;
+Object.constructer==object();
+7,
