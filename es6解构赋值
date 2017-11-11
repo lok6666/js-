@@ -42,14 +42,14 @@
             let{a}={a:"1",b:"2",c:"3"};
             console.log(a);
       1.2.2. 左侧为键值对时,注意键值对赋值时的对应关系
-      var { foo4: baz4 } = { foo4: 'aaa', bar4: 'bbb' };
-      console.log(baz4);// "aaa"
+            var { foo4: baz4 } = { foo4: 'aaa', bar4: 'bbb' };
+            console.log(baz4);// "aaa"
       1.2.3. 解构赋值匹配的是，赋的其实是值。
-      let obj1 = { first: 'hello', last: 'world' };
-      let { first: f, last: l } = obj1;
-      console.log(f,l);//注意和下边写法的区别
-      let { first, last } = obj1;
-      console.log(first,last)
+            let obj1 = { first: 'hello', last: 'world' };
+            let { first: f, last: l } = obj1;
+            console.log(f,l);//注意和下边写法的区别
+            let { first, last } = obj1;
+            console.log(first,last)
       1.2.4. 对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。 
       var { foo6: baz6 } = { foo6: "aaa", bar6: "bbb" };
               console.log(baz6);// "aaa"
@@ -57,3 +57,22 @@
               //上面代码中，真正被赋值的是变量baz6，而不是模式foo6
       1.2.5. 对象也可以用于嵌套结构，健用于匹配，赋的其实是值。
       let {p:[x,{y}]}={p:["hello"{"world"}]}
+2. 字符串，数字的解构赋值
+     2.1. const [a, b, c, d, e] = 'hello';
+            console.log(a); // "h"
+            console.log(b); // "e"
+            console.log(c); // "l"
+            console.log(d); // "l"
+            console.log(e); // "o"
+     2.2. 类数组的对象都有一length属性，对属性也可以解构赋值。
+          let {length:len} = "hello";
+            console.log(len);
+     2.3. 解构赋值，如果等号右边是数值和布尔值，会先转化为对象。
+     //解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。
+          let {toString: s1} = 123;
+          console.log(s1); //
+          //s1 === Number.prototype.toString // true
+          let {toString: s2} = true;
+          console.log(s2); //
+          //s2 === Boolean.prototype.toString // true
+     2.4. 函数参数的解构赋值
