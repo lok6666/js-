@@ -76,3 +76,30 @@
           console.log(s2); //
           //s2 === Boolean.prototype.toString // true
      2.4. 函数参数的解构赋值
+         function a({x=0,y=0}={}){
+         return [x,y];
+         }
+           console.log(a());//[0,0]
+           console.log(a({x:1}));[1,0]
+           console.log(a(x:1,y:2));[1,2]
+         function({x,y}={x:1,y:2}){
+         return [x,y];
+         }
+           console.log(a({}));//underfined underfined
+           console.log(a({x:1}));1,underfined
+           console.log(a({x:1,y:2}));1,2
+3,常见应用
+     3.1. 交换应用
+        var [x,y]=["a","b"];
+            [x,y]=[y,x];
+            console.log([x,y]);
+     3.2. 从函数中返回多个值
+        function a(){
+        return {x:1,y:2};
+        }
+        var {x,y}=a();
+        console.log({x,y});
+      3.3. 提取JSON对象
+        var json = {id:12,a:"ok",data:[12,23]};
+        let {id,a,data}=json;
+        console.log({id,a,data});
