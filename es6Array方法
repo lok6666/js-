@@ -7,9 +7,13 @@ let arrayLike = {
     '2': 'c',
     length: 3
 };
+```
 // ES5的写法
+```javascript
 var arr1 = Array.prototype.slice.call(arrayLike); // ['a', 'b', 'c']
+```
 // ES6的写法
+```javascript
 let arr2 = Array.from(arrayLike); 
 ```
 #Array.of()
