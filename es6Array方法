@@ -1,0 +1,16 @@
+#Array.from()
+//将类数组对象转化为数组
+```javascrit
+let arrayLike = {
+    '0': 'a',
+    '1': 'b',
+    '2': 'c',
+    length: 3
+};
+// ES5的写法
+var arr1 = Array.prototype.slice.call(arrayLike); // ['a', 'b', 'c']
+// ES6的写法
+let arr2 = Array.from(arrayLike); 
+```
+#Array.of()
+//将一组值转化为数组
