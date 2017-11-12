@@ -25,6 +25,7 @@
 ##JSON与js对象的关系
   1. js中一切都是对象。
   2. json是js对象的字符串表现形式。
+  ```javascript
   var obj4 = {x:1,y:2,a:[1,3,5],b:"xyz"};
   var json4 = '{"x":1,"y":2,"a":[1,3,5],"b":"xyz"}';
   var obj6 = [{z:3},[1,2]];
@@ -60,9 +61,12 @@
       find key z
       {"a":12345,"b":false,"c":["Hi",4,"x",{"y":34,"z":"zzz"}]}
       {a: Array(2), b: true, c: Array(4)}
+      ```
  ##2. JSON.parse(text,reviver)
+ ```javascript
      var o6 = JSON.parse('{"p": 5}', function (k, v) {
         if(k === '') return v;     // 如果到了最顶层，则直接返回属性值，
         return v * 2;              // 否则将属性值变为原来的 2 倍。
     });                            // { p: 10 }
     console.log(o6);
+    ```
