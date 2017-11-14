@@ -1,9 +1,13 @@
 # summarize
 ## js数据类型，值，及其转换
-        1. js分为基本数据类型，和引用类型。基本数据对象分为NUmber（NaN类型为NUMber，两个NaN不相等），String，Boolean，underfined，Null。引用对象分为Function，Array，Date，Error。（注：NUll类型为对象。引用对象类型为方法。Math，Json为对象。）
+        1. js分为基本数据类型，和引用类型。基本数据对象分为NUmber（NaN类型为NUMber，两个NaN不相等），
+                String，Boolean，underfined，Null。引用对象分为Function，Array，Date，Error。
+                //NUll类型为对象。引用对象类型为方法。Math，Json为对象。）
         2. js基本对象的变量基本在栈区。引用类型的变量引用分配在堆区，引用的对象（个人理解为指针）分配在堆区。
         3. js对象检测方法为typeof，instanceof。
-        4. 两者区别在于内存分配方式的不同，赋值的不同（基本类型是值得传递，引用类型是引用赋值），判断相等的不同（引用对象的属性放在堆区，是值得判断），函数参数传递的不同（基本类型是值得传递，引用类型是引用传递），内存分配方式是变量的生命周期。 
+        4. 两者区别在于内存分配方式的不同，赋值的不同（基本类型是值得传递，引用类型是引用赋值），
+                判断相等的不同（引用对象的属性放在堆区，是值得判断），函数参数传递的不同（基本类型是值得传递，引用类型是引用传递），
+                内存分配方式是变量的生命周期。 
          ```javascript
                 var obj_a = {value:1};
                 function fn_a(arg){
