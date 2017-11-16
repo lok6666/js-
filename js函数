@@ -1,4 +1,4 @@
-1，函数的定义。
+1. 函数的定义。
 （1），通过函数的声明的形式来定义。
 function max（）{}；
 （2），通过函数表达式的形式来定义。
@@ -6,7 +6,7 @@ var  max = function（）{}；
 （3），通过构造函数。
 var max=  new Function(a,b);
 max(a,b);
-2,函数的调用。
+2. 函数的调用。
 （1），函数直接调用（非严格模式下this为全局对象，严格模式下为undefined）。
 function max（）{}；
 max（）；
