@@ -51,13 +51,13 @@
       "12345678".replace(/\d{3,6}/,'X');//默认为贪婪模式  X78
       "12345678".replace(/\d{3,6}?/,'X');//设置为非贪婪模式 在量词后加？X45678
       "12345678".replace(/\d{3,6}?/g,'X');//返回什么？xx78
-8. #正则表达式属性
+8. 正则表达式属性
   8.1. global 默认为false
   8.2. ignore case 默认为false
   8.3. multiline 默认为false
   8.4. lastIndex 表示当前匹配内容的最后一个字符的下一个位置
   8.5. sourse 正则表达式文本字符串
-9. #原型方法
+9. 原型方法
   9.1. test方法
   ```javascript
    var a = /\d\d/gi;
