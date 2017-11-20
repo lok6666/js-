@@ -71,7 +71,7 @@
     var execExp = /\d{1,2}(\d)(\d)/;
     var retExp = execExp.exec("12s342dsfsf233s");
     console.log(retExp instanceof Array,retExp,execExp.lastIndex);
-    true (3) ["342", "4", "2", index: 3, input: "12s342dsfsf233s"] 0
+    //true (3) ["342", "4", "2", index: 3, input: "12s342dsfsf233s"] 0
     ```
   9.3. search方法 
   ```javascript
